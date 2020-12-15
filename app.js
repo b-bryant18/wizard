@@ -1,0 +1,1 @@
+const charactersList = document.getElementById("charactersList")
