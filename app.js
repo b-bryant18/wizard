@@ -1,4 +1,10 @@
 const charactersList = document.getElementById("charactersList");
+const searchBar = document.getElementById("searchBar");
+console.log(searchBar);
+
+searchBar.addEventListener('keyup', (e) => {
+    console.log(e.target.value);
+})
 
 const loadCharacters = async () => {
     try {
