@@ -1,17 +1,26 @@
 const charactersList = document.getElementById("charactersList");
 const searchBar = document.getElementById("searchBar");
+let hpCharacters = [];
 console.log(searchBar);
 
+//This runs when user types into search bar
 searchBar.addEventListener('keyup', (e) => {
-    console.log(e.target.value);
-})
+    //The text entered into search bar
+    const searchString = (e.target.value);
+    //Filter array based on name or house entered into search bar
+    const filteredCharacters = hpCharacters.filter(character => {
+        return character.name.includes(searchString) || character.house.includes(searchString)
+    });
+    console.log(filteredCharacters);
+});
 
+//This runs when the page loads
 const loadCharacters = async () => {
     try {
         const res = await fetch('http://hp-api.herokuapp.com/api/characters');
-        let hpCharacters = await res.json();
+        hpCharacters = await res.json();
         displayCharacters(hpCharacters);
-        console.log(hpCharacters);
+        // console.log(hpCharacters);
     } catch (err) {
         console.err(err);
     }
