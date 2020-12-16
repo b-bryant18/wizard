@@ -1,5 +1,5 @@
-const charactersList = document.getElementById("charactersList");
-const searchBar = document.getElementById("searchBar");
+const charactersList = Document.getElementById("charactersList");
+const searchBar = Document.getElementById("searchBar");
 let hpCharacters = [];
 console.log(searchBar);
 
