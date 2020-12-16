@@ -6,12 +6,12 @@ console.log(searchBar);
 //This runs when user types into search bar
 searchBar.addEventListener('keyup', (e) => {
     //The text entered into search bar
-    const searchString = (e.target.value);
+    const searchString = (e.target.value.toLowerCase());
     //Filter array based on name or house entered into search bar
     const filteredCharacters = hpCharacters.filter(character => {
-        return character.name.includes(searchString) || character.house.includes(searchString)
+        return character.name.toLowerCase().includes(searchString) || character.house.toLowerCase().includes(searchString)
     });
-    console.log(filteredCharacters);
+    displayCharacters(filteredCharacters);
 });
 
 //This runs when the page loads
